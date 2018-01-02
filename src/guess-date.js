@@ -238,7 +238,7 @@
   }
 
   function tokenize (inputString) {
-    var plainText = inputString.replace(/[^a-z0-9+:/-]+/gi, ' ')
+    var plainText = (inputString + '').replace(/[^a-z0-9+:/-]+/gi, ' ')
     var sanitized = plainText.replace(/\s+/gi, ' ')
     var tokens = sanitized.split(' ')
     return tokens
@@ -298,7 +298,10 @@
   }
 
   function interpretDate (dateContext, dateString) {
-    var entry = new Date(dateFor(dateString, dateContext))
+    dateString = dateString || dateContext || ''
+    dateContext = dateContext || Date.now()
+
+    var entry = dateFor(dateString, dateContext)
     if (interpretDate.debug) {
       console.log(LOG_TABS, 'Intepreted date', dateContext.toUTCString(), dateString, 'as', entry.toUTCString())
     }

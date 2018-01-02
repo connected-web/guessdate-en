@@ -1,0 +1,562 @@
+[
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "",
+    "expected": "Sun, 12 Feb 2017 23:08:56 GMT",
+    "section": "Empty Input",
+    "title": "should match '' as Sun, 12 Feb 2017 23:08:56 GMT",
+    "actual": "Sun, 12 Feb 2017 23:08:56 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Next sunday",
+    "expected": "Sun, 19 Feb 2017 08:00:00 GMT",
+    "section": "Day of Week Matchers",
+    "title": "should match 'Next sunday' as Sun, 19 Feb 2017 08:00:00 GMT",
+    "actual": "Sun, 19 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "on Monday",
+    "expected": "Mon, 13 Feb 2017 08:00:00 GMT",
+    "section": "Day of Week Matchers",
+    "title": "should match 'on Monday' as Mon, 13 Feb 2017 08:00:00 GMT",
+    "actual": "Mon, 13 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Tues",
+    "expected": "Tue, 14 Feb 2017 08:00:00 GMT",
+    "section": "Day of Week Matchers",
+    "title": "should match 'Tues' as Tue, 14 Feb 2017 08:00:00 GMT",
+    "actual": "Tue, 14 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "wednesday",
+    "expected": "Wed, 15 Feb 2017 08:00:00 GMT",
+    "section": "Day of Week Matchers",
+    "title": "should match 'wednesday' as Wed, 15 Feb 2017 08:00:00 GMT",
+    "actual": "Wed, 15 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "thursda",
+    "expected": "Thu, 16 Feb 2017 08:00:00 GMT",
+    "section": "Day of Week Matchers",
+    "title": "should match 'thursda' as Thu, 16 Feb 2017 08:00:00 GMT",
+    "actual": "Thu, 16 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Fri",
+    "expected": "Fri, 17 Feb 2017 08:00:00 GMT",
+    "section": "Day of Week Matchers",
+    "title": "should match 'Fri' as Fri, 17 Feb 2017 08:00:00 GMT",
+    "actual": "Fri, 17 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Satur",
+    "expected": "Sat, 18 Feb 2017 08:00:00 GMT",
+    "section": "Day of Week Matchers",
+    "title": "should match 'Satur' as Sat, 18 Feb 2017 08:00:00 GMT",
+    "actual": "Sat, 18 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Sun",
+    "expected": "Sun, 19 Feb 2017 08:00:00 GMT",
+    "section": "Day of Week Matchers",
+    "title": "should match 'Sun' as Sun, 19 Feb 2017 08:00:00 GMT",
+    "actual": "Sun, 19 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "evening",
+    "expected": "Sun, 12 Feb 2017 18:00:00 GMT",
+    "section": "Time of day strings",
+    "title": "should match 'evening' as Sun, 12 Feb 2017 18:00:00 GMT",
+    "actual": "Sun, 12 Feb 2017 18:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Monday evenig",
+    "expected": "Mon, 13 Feb 2017 18:00:00 GMT",
+    "section": "Time of day strings",
+    "title": "should match 'Monday evenig' as Mon, 13 Feb 2017 18:00:00 GMT",
+    "actual": "Mon, 13 Feb 2017 18:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Friday eve",
+    "expected": "Fri, 17 Feb 2017 18:00:00 GMT",
+    "section": "Time of day strings",
+    "title": "should match 'Friday eve' as Fri, 17 Feb 2017 18:00:00 GMT",
+    "actual": "Fri, 17 Feb 2017 18:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "morning",
+    "expected": "Sun, 12 Feb 2017 08:00:00 GMT",
+    "section": "Time of day strings",
+    "title": "should match 'morning' as Sun, 12 Feb 2017 08:00:00 GMT",
+    "actual": "Sun, 12 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Monday morn",
+    "expected": "Mon, 13 Feb 2017 08:00:00 GMT",
+    "section": "Time of day strings",
+    "title": "should match 'Monday morn' as Mon, 13 Feb 2017 08:00:00 GMT",
+    "actual": "Mon, 13 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Friday mornin",
+    "expected": "Fri, 17 Feb 2017 08:00:00 GMT",
+    "section": "Time of day strings",
+    "title": "should match 'Friday mornin' as Fri, 17 Feb 2017 08:00:00 GMT",
+    "actual": "Fri, 17 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "afternoon",
+    "expected": "Sun, 12 Feb 2017 13:00:00 GMT",
+    "section": "Time of day strings",
+    "title": "should match 'afternoon' as Sun, 12 Feb 2017 13:00:00 GMT",
+    "actual": "Sun, 12 Feb 2017 13:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Monday afternoon",
+    "expected": "Mon, 13 Feb 2017 13:00:00 GMT",
+    "section": "Time of day strings",
+    "title": "should match 'Monday afternoon' as Mon, 13 Feb 2017 13:00:00 GMT",
+    "actual": "Mon, 13 Feb 2017 13:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Friday noon",
+    "expected": "Fri, 17 Feb 2017 12:00:00 GMT",
+    "section": "Time of day strings",
+    "title": "should match 'Friday noon' as Fri, 17 Feb 2017 12:00:00 GMT",
+    "actual": "Fri, 17 Feb 2017 12:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Friday midday",
+    "expected": "Fri, 17 Feb 2017 12:00:00 GMT",
+    "section": "Time of day strings",
+    "title": "should match 'Friday midday' as Fri, 17 Feb 2017 12:00:00 GMT",
+    "actual": "Fri, 17 Feb 2017 12:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Jan",
+    "expected": "Mon, 01 Jan 2018 08:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'Jan' as Mon, 01 Jan 2018 08:00:00 GMT",
+    "actual": "Mon, 01 Jan 2018 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Febru evenig",
+    "expected": "Wed, 01 Feb 2017 18:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'Febru evenig' as Wed, 01 Feb 2017 18:00:00 GMT",
+    "actual": "Wed, 01 Feb 2017 18:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "March eve",
+    "expected": "Wed, 01 Mar 2017 18:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'March eve' as Wed, 01 Mar 2017 18:00:00 GMT",
+    "actual": "Wed, 01 Mar 2017 18:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "April",
+    "expected": "Sat, 01 Apr 2017 08:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'April' as Sat, 01 Apr 2017 08:00:00 GMT",
+    "actual": "Sat, 01 Apr 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "May eve",
+    "expected": "Mon, 01 May 2017 18:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'May eve' as Mon, 01 May 2017 18:00:00 GMT",
+    "actual": "Mon, 01 May 2017 18:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "June morn",
+    "expected": "Thu, 01 Jun 2017 08:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'June morn' as Thu, 01 Jun 2017 08:00:00 GMT",
+    "actual": "Thu, 01 Jun 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "July mornin",
+    "expected": "Sat, 01 Jul 2017 08:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'July mornin' as Sat, 01 Jul 2017 08:00:00 GMT",
+    "actual": "Sat, 01 Jul 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "August mornin",
+    "expected": "Tue, 01 Aug 2017 08:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'August mornin' as Tue, 01 Aug 2017 08:00:00 GMT",
+    "actual": "Tue, 01 Aug 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Sept eve",
+    "expected": "Fri, 01 Sep 2017 18:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'Sept eve' as Fri, 01 Sep 2017 18:00:00 GMT",
+    "actual": "Fri, 01 Sep 2017 18:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "September 15th eve",
+    "expected": "Fri, 15 Sep 2017 18:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'September 15th eve' as Fri, 15 Sep 2017 18:00:00 GMT",
+    "actual": "Fri, 15 Sep 2017 18:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-08-01T08:21:09.788Z",
+    "input": "September 15th eve",
+    "expected": "Fri, 15 Sep 2017 18:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'September 15th eve' as Fri, 15 Sep 2017 18:00:00 GMT",
+    "actual": "Fri, 15 Sep 2017 18:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "October mornin",
+    "expected": "Sun, 01 Oct 2017 08:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'October mornin' as Sun, 01 Oct 2017 08:00:00 GMT",
+    "actual": "Sun, 01 Oct 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "November mornin",
+    "expected": "Wed, 01 Nov 2017 08:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'November mornin' as Wed, 01 Nov 2017 08:00:00 GMT",
+    "actual": "Wed, 01 Nov 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "December eve",
+    "expected": "Fri, 01 Dec 2017 18:00:00 GMT",
+    "section": "Month of year strings",
+    "title": "should match 'December eve' as Fri, 01 Dec 2017 18:00:00 GMT",
+    "actual": "Fri, 01 Dec 2017 18:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "tomorrow",
+    "expected": "Mon, 13 Feb 2017 08:00:00 GMT",
+    "section": "Tomorrow",
+    "title": "should match 'tomorrow' as Mon, 13 Feb 2017 08:00:00 GMT",
+    "actual": "Mon, 13 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "tomorrow after work",
+    "expected": "Mon, 13 Feb 2017 17:00:00 GMT",
+    "section": "Tomorrow",
+    "title": "should match 'tomorrow after work' as Mon, 13 Feb 2017 17:00:00 GMT",
+    "actual": "Mon, 13 Feb 2017 17:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "tomorrow before lunch",
+    "expected": "Mon, 13 Feb 2017 11:00:00 GMT",
+    "section": "Tomorrow",
+    "title": "should match 'tomorrow before lunch' as Mon, 13 Feb 2017 11:00:00 GMT",
+    "actual": "Mon, 13 Feb 2017 11:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "tomorrow at 8am",
+    "expected": "Mon, 13 Feb 2017 08:00:00 GMT",
+    "section": "Tomorrow",
+    "title": "should match 'tomorrow at 8am' as Mon, 13 Feb 2017 08:00:00 GMT",
+    "actual": "Mon, 13 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Monday after breakfast",
+    "expected": "Mon, 13 Feb 2017 07:00:00 GMT",
+    "section": "After points in time",
+    "title": "should match 'Monday after breakfast' as Mon, 13 Feb 2017 07:00:00 GMT",
+    "actual": "Mon, 13 Feb 2017 07:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Tuesday after work",
+    "expected": "Tue, 14 Feb 2017 17:00:00 GMT",
+    "section": "After points in time",
+    "title": "should match 'Tuesday after work' as Tue, 14 Feb 2017 17:00:00 GMT",
+    "actual": "Tue, 14 Feb 2017 17:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Wednesday after lunch",
+    "expected": "Wed, 15 Feb 2017 13:00:00 GMT",
+    "section": "After points in time",
+    "title": "should match 'Wednesday after lunch' as Wed, 15 Feb 2017 13:00:00 GMT",
+    "actual": "Wed, 15 Feb 2017 13:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Thursday after school",
+    "expected": "Thu, 16 Feb 2017 16:00:00 GMT",
+    "section": "After points in time",
+    "title": "should match 'Thursday after school' as Thu, 16 Feb 2017 16:00:00 GMT",
+    "actual": "Thu, 16 Feb 2017 16:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Monday before breakfast",
+    "expected": "Mon, 13 Feb 2017 06:00:00 GMT",
+    "section": "Before points in time",
+    "title": "should match 'Monday before breakfast' as Mon, 13 Feb 2017 06:00:00 GMT",
+    "actual": "Mon, 13 Feb 2017 06:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Tuesday before work",
+    "expected": "Tue, 14 Feb 2017 07:00:00 GMT",
+    "section": "Before points in time",
+    "title": "should match 'Tuesday before work' as Tue, 14 Feb 2017 07:00:00 GMT",
+    "actual": "Tue, 14 Feb 2017 07:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Wednesday before lunch",
+    "expected": "Wed, 15 Feb 2017 11:00:00 GMT",
+    "section": "Before points in time",
+    "title": "should match 'Wednesday before lunch' as Wed, 15 Feb 2017 11:00:00 GMT",
+    "actual": "Wed, 15 Feb 2017 11:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Thursday before school",
+    "expected": "Thu, 16 Feb 2017 07:00:00 GMT",
+    "section": "Before points in time",
+    "title": "should match 'Thursday before school' as Thu, 16 Feb 2017 07:00:00 GMT",
+    "actual": "Thu, 16 Feb 2017 07:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "24th",
+    "expected": "Fri, 24 Feb 2017 08:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match '24th' as Fri, 24 Feb 2017 08:00:00 GMT",
+    "actual": "Fri, 24 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "26th",
+    "expected": "Sun, 26 Feb 2017 08:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match '26th' as Sun, 26 Feb 2017 08:00:00 GMT",
+    "actual": "Sun, 26 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "evening of the 30th",
+    "expected": "Thu, 02 Mar 2017 18:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match 'evening of the 30th' as Thu, 02 Mar 2017 18:00:00 GMT",
+    "actual": "Thu, 02 Mar 2017 18:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "January 1st",
+    "expected": "Mon, 01 Jan 2018 08:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match 'January 1st' as Mon, 01 Jan 2018 08:00:00 GMT",
+    "actual": "Mon, 01 Jan 2018 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "May 21st",
+    "expected": "Sun, 21 May 2017 08:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match 'May 21st' as Sun, 21 May 2017 08:00:00 GMT",
+    "actual": "Sun, 21 May 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "1st February",
+    "expected": "Wed, 01 Feb 2017 08:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match '1st February' as Wed, 01 Feb 2017 08:00:00 GMT",
+    "actual": "Wed, 01 Feb 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "2nd February after lunch",
+    "expected": "Thu, 02 Feb 2017 13:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match '2nd February after lunch' as Thu, 02 Feb 2017 13:00:00 GMT",
+    "actual": "Thu, 02 Feb 2017 13:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "1st March",
+    "expected": "Wed, 01 Mar 2017 08:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match '1st March' as Wed, 01 Mar 2017 08:00:00 GMT",
+    "actual": "Wed, 01 Mar 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "23rd August",
+    "expected": "Wed, 23 Aug 2017 08:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match '23rd August' as Wed, 23 Aug 2017 08:00:00 GMT",
+    "actual": "Wed, 23 Aug 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "4pm on the 25th March",
+    "expected": "Sat, 25 Mar 2017 16:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match '4pm on the 25th March' as Sat, 25 Mar 2017 16:00:00 GMT",
+    "actual": "Sat, 25 Mar 2017 16:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "March 25th at 2am",
+    "expected": "Sat, 25 Mar 2017 02:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match 'March 25th at 2am' as Sat, 25 Mar 2017 02:00:00 GMT",
+    "actual": "Sat, 25 Mar 2017 02:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "Sat May 27, 2017",
+    "expected": "Sat, 27 May 2017 08:00:00 GMT",
+    "section": "Dates in month",
+    "title": "should match 'Sat May 27, 2017' as Sat, 27 May 2017 08:00:00 GMT",
+    "actual": "Sat, 27 May 2017 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "May 27, 2018",
+    "expected": "Sun, 27 May 2018 08:00:00 GMT",
+    "section": "Year",
+    "title": "should match 'May 27, 2018' as Sun, 27 May 2018 08:00:00 GMT",
+    "actual": "Sun, 27 May 2018 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "May 27, 2016",
+    "expected": "Fri, 27 May 2016 08:00:00 GMT",
+    "section": "Year",
+    "title": "should match 'May 27, 2016' as Fri, 27 May 2016 08:00:00 GMT",
+    "actual": "Fri, 27 May 2016 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "January 2018",
+    "expected": "Mon, 01 Jan 2018 08:00:00 GMT",
+    "section": "Year",
+    "title": "should match 'January 2018' as Mon, 01 Jan 2018 08:00:00 GMT",
+    "actual": "Mon, 01 Jan 2018 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "11:23",
+    "expected": "Sun, 12 Feb 2017 11:23:00 GMT",
+    "section": "Time in day",
+    "title": "should match '11:23' as Sun, 12 Feb 2017 11:23:00 GMT",
+    "actual": "Sun, 12 Feb 2017 11:23:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "11am",
+    "expected": "Sun, 12 Feb 2017 11:00:00 GMT",
+    "section": "Time in day",
+    "title": "should match '11am' as Sun, 12 Feb 2017 11:00:00 GMT",
+    "actual": "Sun, 12 Feb 2017 11:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "11pm",
+    "expected": "Sun, 12 Feb 2017 23:00:00 GMT",
+    "section": "Time in day",
+    "title": "should match '11pm' as Sun, 12 Feb 2017 23:00:00 GMT",
+    "actual": "Sun, 12 Feb 2017 23:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "15:59",
+    "expected": "Sun, 12 Feb 2017 15:59:00 GMT",
+    "section": "Time in day",
+    "title": "should match '15:59' as Sun, 12 Feb 2017 15:59:00 GMT",
+    "actual": "Sun, 12 Feb 2017 15:59:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "5:15am",
+    "expected": "Sun, 12 Feb 2017 05:15:00 GMT",
+    "section": "Time in day",
+    "title": "should match '5:15am' as Sun, 12 Feb 2017 05:15:00 GMT",
+    "actual": "Sun, 12 Feb 2017 05:15:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "5:45pm",
+    "expected": "Sun, 12 Feb 2017 17:45:00 GMT",
+    "section": "Time in day",
+    "title": "should match '5:45pm' as Sun, 12 Feb 2017 17:45:00 GMT",
+    "actual": "Sun, 12 Feb 2017 17:45:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "20:15",
+    "expected": "Sun, 12 Feb 2017 20:15:00 GMT",
+    "section": "Time in day",
+    "title": "should match '20:15' as Sun, 12 Feb 2017 20:15:00 GMT",
+    "actual": "Sun, 12 Feb 2017 20:15:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "25:05",
+    "expected": "Mon, 13 Feb 2017 01:05:00 GMT",
+    "section": "Time in day",
+    "title": "should match '25:05' as Mon, 13 Feb 2017 01:05:00 GMT",
+    "actual": "Mon, 13 Feb 2017 01:05:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "21:03:30",
+    "expected": "Sun, 12 Feb 2017 21:03:30 GMT",
+    "section": "Time in day",
+    "title": "should match '21:03:30' as Sun, 12 Feb 2017 21:03:30 GMT",
+    "actual": "Sun, 12 Feb 2017 21:03:30 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "6th December 2017 20:15",
+    "expected": "Wed, 06 Dec 2017 20:15:00 GMT",
+    "section": "Mixed date and time",
+    "title": "should match '6th December 2017 20:15' as Wed, 06 Dec 2017 20:15:00 GMT",
+    "actual": "Wed, 06 Dec 2017 20:15:00 GMT"
+  }
+]

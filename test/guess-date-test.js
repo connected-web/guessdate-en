@@ -7,16 +7,32 @@ const fixedTime = new Date(1486940936 * 1000) // Sun Feb 12 2017 23:08:56 GMT
 // set this to true to understand why a test may be breaking
 guessDate.debug = false
 
+const testResults = []
+
 function test (input, expected, referenceTime) {
   referenceTime = referenceTime || fixedTime
-  it(`should match '${input}' as ${expected}`, () => {
+
+  const result = {
+    referenceTime,
+    input,
+    expected
+  }
+
+  const spec = it(`should match '${input}' as ${expected}`, () => {
     const actual = guessDate(referenceTime, input).toUTCString()
     assert.deepEqual(actual, expected)
+
+    result.actual = actual
   })
+
+  result.section = spec.parent.title
+  result.title = spec.title
+
+  testResults.push(result)
 }
 
 describe('Guess Date', () => {
-  describe('No change', () => {
+  describe('Empty Input', () => {
     test('', 'Sun, 12 Feb 2017 23:08:56 GMT')
   })
 
@@ -120,4 +136,40 @@ describe('Guess Date', () => {
   describe('Mixed date and time', () => {
     test('6th December 2017 20:15', 'Wed, 06 Dec 2017 20:15:00 GMT')
   })
+})
+
+function logTestResults () {
+  const path = require('path')
+  const fs = require('fs')
+  const filepath = path.join(__dirname, 'guess-date-tests.json')
+  fs.writeFileSync(filepath, JSON.stringify(testResults, null, 2), 'utf8')
+  console.log('Test results logged to:', filepath)
+}
+
+function generateMarkdown () {
+  const path = require('path')
+  const fs = require('fs')
+  const filepath = path.join(__dirname, 'guess-date-tests.md')
+
+  const sections = testResults.reduce((acc, item) => {
+    acc[item.section] = acc[item.section] || []
+    acc[item.section].push(item)
+    return acc
+  }, {})
+
+  const contents = Object.keys(sections).reduce((acc, key) => {
+    const section = sections[key]
+    acc.push(`### ${key}`, '', '```')
+    section.forEach(result => acc.push([`guessDate(now, '${result.input}')`.padEnd(43), `// ${result.actual}`].join('')))
+    acc.push('```', '')
+    return acc
+  }, ['## Examples', '```', `const now = new Date('${fixedTime}') // The following tests assume this as the reference date`, '```', ''])
+
+  fs.writeFileSync(filepath, contents.join('\n'), 'utf8')
+  console.log('Test markdown logged to:', filepath)
+}
+
+after(() => {
+  logTestResults()
+  generateMarkdown()
 })

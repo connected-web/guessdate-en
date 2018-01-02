@@ -1,47 +1,5 @@
-# Guess Date (EN)
-
-Guess an english date string, returns a javascript date object.
-
-## Usage
-
-As part of a node-js project:
-
-```
-npm i --save guessdate-en
-```
-
-### Node JS
-```
-const guessDate = require('guessdate-en')
-const date = guessDate('April 31st after lunch')
-console.log('Guesed date: ' + date)
-```
-
-### Web / HTML
-
-Stubbed for now, will prepare a github CDN link:
-```
-TBD
-```
-
-## API
-
-### `guessDate(inputString)`
-
-- `inputString`: the natural language string to guess a date and time from, relative to `Date.now()`
-
-`returns` a javascript `Date` object
-
-### `guessDate(dateContext, inputString)`
-
-- `dateContext`: a `Date` object from which to apply the guess to, defaults to `Date.now()`
-- `inputString`: the natural language string to guess a date and time from
-
-`returns` a javascript `Date` object
-
 ## Examples
 ```
-const guessDate = require('guessdate-en')
 const now = new Date('Sun Feb 12 2017 23:08:56 GMT+0000 (GMT)') // The following tests assume this as the reference date
 ```
 
