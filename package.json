@@ -1,0 +1,30 @@
+{
+  "name": "guessdate-en",
+  "version": "1.0.0",
+  "description": "Guess an english date string, returns a javascript date object",
+  "main": "guess.js",
+  "scripts": {
+    "lint": "standard --fix",
+    "test": "npm run lint && mocha test/**/*.js --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connected-web/guessdate-en.git"
+  },
+  "keywords": [
+    "Guess",
+    "Date",
+    "EN",
+    "English",
+    "Javascript"
+  ],
+  "author": "John Beech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/connected-web/guessdate-en/issues"
+  },
+  "homepage": "https://github.com/connected-web/guessdate-en#readme",
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}
