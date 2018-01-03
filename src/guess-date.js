@@ -9,6 +9,7 @@
   const MonthOfYearMatcher = /^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[ruarychileyustemober]*$/i
   const DateInMonthMatcher = /^(\d\d?)[nrdsth]{2}$/i
   const TimeOfDayMatcher = /^(1?\d):?([0-5]\d)?(am|pm)$/i
+  const YearMonthDayMatcher = /^(\d\d\d?\d?)[/\\|,.-]([0-1]\d)[/\\|,.-]([0-2]\d)$/i
   const ExactTimeOfDayMatcher = /^([1-2]?\d):([0-5]\d):?([0-5]\d)?$/i
   const YearMatcher = /^(\d\d\d\d)$/i
   const RogueNumberMatcher = /^(\d?\d),?$/i
@@ -58,6 +59,9 @@
   }, {
     regex: YearMatcher,
     handler: matchYear
+  }, {
+    regex: YearMonthDayMatcher,
+    handler: matchYearMonthDay
   }]
 
   const applyHours = (hours) => {
@@ -237,6 +241,18 @@
     }
   }
 
+  function matchYearMonthDay (token, tokens, context) {
+    let year = Number.parseInt(token.match(YearMonthDayMatcher)[1].toLowerCase())
+    let month = Number.parseInt(token.match(YearMonthDayMatcher)[2].toLowerCase())
+    let day = Number.parseInt(token.match(YearMonthDayMatcher)[3].toLowerCase())
+
+    return {
+      setUTCFullYear: year,
+      setUTCMonth: month - 1,
+      setUTCDate: day
+    }
+  }
+
   function tokenize (inputString) {
     let plainText = (inputString + '').replace(/[^a-z0-9+:/-]+/gi, ' ')
     let sanitized = plainText.replace(/\s+/gi, ' ')
@@ -298,8 +314,10 @@
   }
 
   function guessDate (dateContext, dateString) {
-    dateString = dateString || dateContext || ''
-    dateContext = dateString ? dateContext : Date.now()
+    if (dateContext && !dateString) {
+      dateString = dateContext
+      dateContext = new Date()
+    }
 
     let entry = dateFor(dateString, dateContext)
     if (guessDate.debug) {

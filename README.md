@@ -4,13 +4,14 @@ Guess an english date string, returns a javascript date object.
 
 ## Usage
 
-As part of a node-js project:
+### Node JS
 
+Add to your node js project:
 ```
 npm i --save guessdate-en
 ```
 
-### Node JS
+Then:
 ```
 const guessDate = require('guessdate-en')
 const date = guessDate('April 31st after lunch')
@@ -19,9 +20,20 @@ console.log('Guesed date: ' + date)
 
 ### Web / HTML
 
-Stubbed for now, will prepare a github CDN link:
+Include using our CDN link, or copy `guess-date.js` into your project:
 ```
-TBD
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <title>Guess Date (EN) Example</title>
+  <script src="https://cdn.rawgit.com/connected-web/guessdate-en/1.0.0/src/guess-date.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+    document.write('Next Monday at 6:20pm', guessDate('Next Monday at 6:20pm'))
+    </script>
+  </body>
+</html>
 ```
 
 ## API
@@ -41,8 +53,8 @@ TBD
 
 ## Examples
 ```
-const guessDate = require('guessdate-en')
-const now = new Date('Sun Feb 12 2017 23:08:56 GMT+0000 (GMT)') // The following tests assume this as the reference date
+const guessDate = require('guessdate-en') // or const guessDate = window.guessDate
+const now = new Date('Sun Feb 12 2017 23:08:56 GMT+0000 (GMT)') // The following examples assume this as the reference date
 ```
 
 ### Empty Input

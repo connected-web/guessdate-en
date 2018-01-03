@@ -9,6 +9,14 @@
   },
   {
     "referenceTime": "2017-02-12T23:08:56.000Z",
+    "input": "2015-05-25",
+    "expected": "Mon, 25 May 2015 08:00:00 GMT",
+    "section": "Database Years",
+    "title": "should match '2015-05-25' as Mon, 25 May 2015 08:00:00 GMT",
+    "actual": "Mon, 25 May 2015 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2017-02-12T23:08:56.000Z",
     "input": "Next sunday",
     "expected": "Sun, 19 Feb 2017 08:00:00 GMT",
     "section": "Day of Week Matchers",

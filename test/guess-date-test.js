@@ -36,6 +36,10 @@ describe('Guess Date', () => {
     test('', 'Sun, 12 Feb 2017 23:08:56 GMT')
   })
 
+  describe('Database Years', () => {
+    test('2015-05-25', 'Mon, 25 May 2015 08:00:00 GMT')
+  })
+
   describe('Day of Week Matchers', () => {
     test('Next sunday', 'Sun, 19 Feb 2017 08:00:00 GMT')
     test('on Monday', 'Mon, 13 Feb 2017 08:00:00 GMT')

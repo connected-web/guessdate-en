@@ -9,6 +9,12 @@ const now = new Date('Sun Feb 12 2017 23:08:56 GMT+0000 (GMT)') // The following
 guessDate(now, '')                         // Sun, 12 Feb 2017 23:08:56 GMT
 ```
 
+### Database Years
+
+```
+guessDate(now, '2015-05-25')               // Mon, 25 May 2015 08:00:00 GMT
+```
+
 ### Day of Week Matchers
 
 ```
