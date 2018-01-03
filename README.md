@@ -1,6 +1,12 @@
 # Guess Date (EN)
 
-Guess an english date string, returns a javascript date object.
+Returns a javascript `Date` object from an english date string.
+
+```js
+guessDate('April 31st after lunch')
+guessDate('Thursday at 5:15pm')
+guessDate('January 2018')
+```
 
 ## Usage
 
@@ -54,7 +60,8 @@ Include using our CDN link, or copy `guess-date.js` into your project:
 ## Examples
 
 ```js
-const now = new Date('Sun Feb 12 2017 23:08:56 GMT+0000 (GMT)') // The following tests assume this as the reference date
+// The following tests assume this as the reference date
+const now = new Date('Sun Feb 12 2017 23:08:56 GMT+0000 (GMT)')
 ```
 
 ### Empty Input
