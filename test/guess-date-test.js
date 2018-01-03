@@ -163,11 +163,11 @@ function generateMarkdown () {
 
   const contents = Object.keys(sections).reduce((acc, key) => {
     const section = sections[key]
-    acc.push(`### ${key}`, '', '```')
+    acc.push(`### ${key}`, '', '```js')
     section.forEach(result => acc.push([`guessDate(now, '${result.input}')`.padEnd(43), `// ${result.actual}`].join('')))
     acc.push('```', '')
     return acc
-  }, ['## Examples', '```', `const now = new Date('${fixedTime}') // The following tests assume this as the reference date`, '```', ''])
+  }, ['## Examples', '```js', `const now = new Date('${fixedTime}') // The following tests assume this as the reference date`, '```', ''])
 
   fs.writeFileSync(filepath, contents.join('\n'), 'utf8')
   console.log('Test markdown logged to:', filepath)
