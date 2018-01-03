@@ -26,7 +26,7 @@ Include using our CDN link, or copy `guess-date.js` into your project:
 <html>
   <head>
   <title>Guess Date (EN) Example</title>
-  <script src="https://cdn.rawgit.com/connected-web/guessdate-en/1.0.0/src/guess-date.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/connected-web/guessdate-en/1.0.1/src/guess-date.js" type="text/javascript"></script>
   </head>
   <body>
     <script type="text/javascript">
