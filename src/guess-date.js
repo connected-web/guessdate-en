@@ -299,7 +299,7 @@
 
   function guessDate (dateContext, dateString) {
     dateString = dateString || dateContext || ''
-    dateContext = dateContext || Date.now()
+    dateContext = dateString ? dateContext : Date.now()
 
     let entry = dateFor(dateString, dateContext)
     if (guessDate.debug) {
