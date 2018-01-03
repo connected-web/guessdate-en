@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/connected-web/guessdate-en#readme",
   "devDependencies": {
+    "mocha": "^4.1.0",
     "standard": "^10.0.3"
   }
 }
