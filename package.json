@@ -1,6 +1,6 @@
 {
   "name": "guessdate-en",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Guess an english date string, returns a javascript date object",
   "main": "guess.js",
   "scripts": {
