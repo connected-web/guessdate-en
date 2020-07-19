@@ -1,6 +1,6 @@
 ## Examples
 ```js
-const now = new Date('Sun Feb 12 2017 23:08:56 GMT+0000 (GMT)') // The following tests assume this as the reference date
+const now = new Date('Sun Feb 12 2017 23:08:56 GMT+0000 (Greenwich Mean Time)') // The following tests assume this as the reference date
 ```
 
 ### Empty Input

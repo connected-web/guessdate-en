@@ -71,7 +71,7 @@
   }
 
   function matchRogueNumber (token, tokens, context) {
-    let dateInMonth = Number.parseInt(token.match(RogueNumberMatcher)[1])
+    const dateInMonth = Number.parseInt(token.match(RogueNumberMatcher)[1])
 
     return {
       setUTCDate: dateInMonth
@@ -79,7 +79,7 @@
   }
 
   function matchYear (token, tokens, context) {
-    let year = Number.parseInt(token.match(YearMatcher)[1])
+    const year = Number.parseInt(token.match(YearMatcher)[1])
 
     return {
       setUTCFullYear: year
@@ -87,12 +87,12 @@
   }
 
   function matchExactTimeOfDay (token, tokens, context) {
-    let time = token.match(ExactTimeOfDayMatcher)
-    let hours = Number.parseInt(time[1])
-    let minutes = Number.parseInt(time[2])
-    let seconds = Number.parseInt(time[3])
+    const time = token.match(ExactTimeOfDayMatcher)
+    const hours = Number.parseInt(time[1])
+    const minutes = Number.parseInt(time[2])
+    const seconds = Number.parseInt(time[3])
 
-    let setUTCSeconds = seconds || undefined
+    const setUTCSeconds = seconds || undefined
 
     return {
       setUTCHours: hours,
@@ -103,8 +103,8 @@
 
   function matchTimeOfDay (token, tokens, context) {
     let hours = Number.parseInt(token.match(TimeOfDayMatcher)[1])
-    let minutes = Number.parseInt(token.match(TimeOfDayMatcher)[2]) || 0
-    let amOrPm = token.match(TimeOfDayMatcher)[3].toLowerCase()
+    const minutes = Number.parseInt(token.match(TimeOfDayMatcher)[2]) || 0
+    const amOrPm = token.match(TimeOfDayMatcher)[3].toLowerCase()
     hours = hours + ((amOrPm === 'pm') ? 12 : 0)
 
     return {
@@ -114,7 +114,7 @@
   }
 
   function matchDateInMonth (token, tokens, context) {
-    let dateInMonth = Number.parseInt(token.match(DateInMonthMatcher)[1])
+    const dateInMonth = Number.parseInt(token.match(DateInMonthMatcher)[1])
 
     return {
       setUTCDate: dateInMonth
@@ -122,8 +122,8 @@
   }
 
   function matchTomorrow (token, tokens, context) {
-    let now = context.getTime()
-    let future = new Date(now + DAY)
+    const now = context.getTime()
+    const future = new Date(now + DAY)
 
     return {
       setUTCFullYear: future.getUTCFullYear(),
@@ -181,28 +181,28 @@
   }
 
   function matchMonthOfYear (token, tokens, context) {
-    let key = token.match(MonthOfYearMatcher)[1].toLowerCase()
-    let monthOffset = {
-      'jan': 0,
-      'feb': 1,
-      'mar': 2,
-      'apr': 3,
-      'may': 4,
-      'jun': 5,
-      'jul': 6,
-      'aug': 7,
-      'sep': 8,
-      'oct': 9,
-      'nov': 10,
-      'dec': 11
+    const key = token.match(MonthOfYearMatcher)[1].toLowerCase()
+    const monthOffset = {
+      jan: 0,
+      feb: 1,
+      mar: 2,
+      apr: 3,
+      may: 4,
+      jun: 5,
+      jul: 6,
+      aug: 7,
+      sep: 8,
+      oct: 9,
+      nov: 10,
+      dec: 11
     }[key]
 
     if (!Number.isInteger(monthOffset)) {
       throw new Error('Unrecognised month of the year: ' + monthOffset)
     }
 
-    let now = context.getTime()
-    let future = new Date(now)
+    const now = context.getTime()
+    const future = new Date(now)
     future.setUTCMonth(monthOffset)
     if (context.getMonth() > monthOffset) {
       future.setUTCFullYear(context.getUTCFullYear() + 1)
@@ -215,15 +215,15 @@
   }
 
   function matchDayOfWeek (token, tokens, context) {
-    let key = token.match(DayOfWeekMatcher)[1].toLowerCase()
+    const key = token.match(DayOfWeekMatcher)[1].toLowerCase()
     let dayOffset = {
-      'sun': 0,
-      'mon': 1,
-      'tue': 2,
-      'wed': 3,
-      'thu': 4,
-      'fri': 5,
-      'sat': 6
+      sun: 0,
+      mon: 1,
+      tue: 2,
+      wed: 3,
+      thu: 4,
+      fri: 5,
+      sat: 6
     }[key]
 
     if (!Number.isInteger(dayOffset)) {
@@ -231,8 +231,8 @@
     }
 
     dayOffset = (dayOffset - context.getDay() + 7) % 7 || 7
-    let now = context.getTime()
-    let future = new Date(now + (dayOffset * DAY))
+    const now = context.getTime()
+    const future = new Date(now + (dayOffset * DAY))
 
     return {
       setUTCFullYear: future.getUTCFullYear(),
@@ -242,9 +242,9 @@
   }
 
   function matchYearMonthDay (token, tokens, context) {
-    let year = Number.parseInt(token.match(YearMonthDayMatcher)[1].toLowerCase())
-    let month = Number.parseInt(token.match(YearMonthDayMatcher)[2].toLowerCase())
-    let day = Number.parseInt(token.match(YearMonthDayMatcher)[3].toLowerCase())
+    const year = Number.parseInt(token.match(YearMonthDayMatcher)[1].toLowerCase())
+    const month = Number.parseInt(token.match(YearMonthDayMatcher)[2].toLowerCase())
+    const day = Number.parseInt(token.match(YearMonthDayMatcher)[3].toLowerCase())
 
     return {
       setUTCFullYear: year,
@@ -254,22 +254,22 @@
   }
 
   function tokenize (inputString) {
-    let plainText = (inputString + '').replace(/[^a-z0-9+:/-]+/gi, ' ')
-    let sanitized = plainText.replace(/\s+/gi, ' ')
-    let tokens = sanitized.split(' ')
+    const plainText = (inputString + '').replace(/[^a-z0-9+:/-]+/gi, ' ')
+    const sanitized = plainText.replace(/\s+/gi, ' ')
+    const tokens = sanitized.split(' ')
     return tokens
   }
 
   function dateFor (dateString, context) {
-    let tokens = tokenize(dateString)
+    const tokens = tokenize(dateString)
     let token
 
-    let results = []
+    const results = []
     while (tokens.length > 0) {
       token = tokens.shift()
       matchers.forEach(function (matcher) {
         if (matcher.regex.test(token)) {
-          let result = matcher.handler(token, tokens, context)
+          const result = matcher.handler(token, tokens, context)
           if (guessDate.debug) {
             console.log(LOG_TABS, 'Matched', JSON.stringify(result))
           }
@@ -282,7 +282,7 @@
     if (results.length > 0) {
       results.forEach(function (item) {
         Object.keys(item).forEach(function (key) {
-          let value = item[key]
+          const value = item[key]
           decisions[key] = value
         })
       })
@@ -304,9 +304,9 @@
       }
     }
 
-    let date = new Date(context)
+    const date = new Date(context)
     Object.keys(decisions).forEach(function (key) {
-      let value = decisions[key]
+      const value = decisions[key]
       date[key](value)
     })
 
@@ -319,7 +319,7 @@
       dateContext = new Date()
     }
 
-    let entry = dateFor(dateString, dateContext)
+    const entry = dateFor(dateString, dateContext)
     if (guessDate.debug) {
       console.log(LOG_TABS, 'Intepreted date', dateContext.toUTCString(), dateString, 'as', entry.toUTCString())
     }
