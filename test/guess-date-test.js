@@ -20,7 +20,7 @@ function test (input, expected, referenceTime) {
 
   const spec = it(`should match '${input}' as ${expected}`, () => {
     const actual = guessDate(referenceTime, input).toUTCString()
-    assert.deepEqual(actual, expected)
+    assert.deepStrictEqual(actual, expected)
 
     result.actual = actual
   })
