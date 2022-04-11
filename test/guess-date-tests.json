@@ -566,5 +566,37 @@
     "section": "Mixed date and time",
     "title": "should match '6th December 2017 20:15' as Wed, 06 Dec 2017 20:15:00 GMT",
     "actual": "Wed, 06 Dec 2017 20:15:00 GMT"
+  },
+  {
+    "referenceTime": "2021-08-31T16:47:00.000Z",
+    "input": "Sept 1",
+    "expected": "Wed, 01 Sep 2021 08:00:00 GMT",
+    "section": "Specific problematic dates",
+    "title": "should match 'Sept 1' as Wed, 01 Sep 2021 08:00:00 GMT",
+    "actual": "Wed, 01 Sep 2021 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2021-08-31T16:47:00.000Z",
+    "input": "Sept 4",
+    "expected": "Sat, 04 Sep 2021 08:00:00 GMT",
+    "section": "Specific problematic dates",
+    "title": "should match 'Sept 4' as Sat, 04 Sep 2021 08:00:00 GMT",
+    "actual": "Sat, 04 Sep 2021 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2021-08-31T16:47:00.000Z",
+    "input": "Sat",
+    "expected": "Sat, 04 Sep 2021 08:00:00 GMT",
+    "section": "Specific problematic dates",
+    "title": "should match 'Sat' as Sat, 04 Sep 2021 08:00:00 GMT",
+    "actual": "Sat, 04 Sep 2021 08:00:00 GMT"
+  },
+  {
+    "referenceTime": "2022-03-31T11:39:00.000Z",
+    "input": "April 2nd",
+    "expected": "Sat, 02 Apr 2022 08:00:00 GMT",
+    "section": "Specific problematic dates",
+    "title": "should match 'April 2nd' as Sat, 02 Apr 2022 08:00:00 GMT",
+    "actual": "Sat, 02 Apr 2022 08:00:00 GMT"
   }
 ]
