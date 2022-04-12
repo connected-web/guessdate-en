@@ -194,3 +194,25 @@ guessDate(now, '21:03:30')                 // Sun, 12 Feb 2017 21:03:30 GMT
 ```js
 guessDate(now, '6th December 2017 20:15')  // Wed, 06 Dec 2017 20:15:00 GMT
 ```
+
+### Specific problematic dates
+
+```js
+guessDate(now, 'Sept 1')                   // Wed, 01 Sep 2021 08:00:00 GMT
+guessDate(now, 'Sept 4')                   // Sat, 04 Sep 2021 08:00:00 GMT
+guessDate(now, 'Sat')                      // Sat, 04 Sep 2021 08:00:00 GMT
+guessDate(now, 'April 2nd')                // Sat, 02 Apr 2022 08:00:00 GMT
+```
+
+## Contributors
+
+- John Beech (@johnbeech) (Connected Web) - original design and release of library, maintainer
+- Jeroen Akkerman (@Ionaru) - fixes to specific date problems
+
+## Contributing
+
+If you discover any problematic dates, or have suggestions for improvements - please raise an issue or a pull request against this repo.
+
+## License
+
+Released under [ISC](https://choosealicense.com/licenses/isc/) license.
