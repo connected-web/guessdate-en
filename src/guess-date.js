@@ -203,6 +203,9 @@
 
     const now = context.getTime()
     const future = new Date(now)
+    // Setting the date to "1" ensures that the month does not tick over to the next when Date is
+    // higher than the amount of days in the month.
+    future.setUTCDate(1)
     future.setUTCMonth(monthOffset)
     if (context.getMonth() > monthOffset) {
       future.setUTCFullYear(context.getUTCFullYear() + 1)
@@ -230,7 +233,9 @@
       throw new Error('Unrecognised day of the week: ' + dayOffset)
     }
 
-    dayOffset = (dayOffset - context.getDay() + 7) % 7 || 7
+    // Using getUTCDay here prevents the day from being set to the next one
+    // when a timezone offset pushes the context to the next day.
+    dayOffset = (dayOffset - context.getUTCDay() + 7) % 7 || 7
     const now = context.getTime()
     const future = new Date(now + (dayOffset * DAY))
 
@@ -254,6 +259,8 @@
   }
 
   function tokenize (inputString) {
+    // Using the UTC string instead of the local string prevents tokens being misinterpreted by timezone fluff.
+    inputString = inputString instanceof Date ? inputString.toUTCString() : inputString
     const plainText = (inputString + '').replace(/[^a-z0-9+:/-]+/gi, ' ')
     const sanitized = plainText.replace(/\s+/gi, ' ')
     const tokens = sanitized.split(' ')
@@ -305,7 +312,11 @@
     }
 
     const date = new Date(context)
-    Object.keys(decisions).forEach(function (key) {
+    // This is not the best fix because objects have no set order,
+    // but it works here because the keys are added and modified big to small.
+    // Reversing that prevents issues like setting the month to April while the date is on 31st,
+    // which would cause the month to tick over to May.
+    Object.keys(decisions).reverse().forEach(function (key) {
       const value = decisions[key]
       date[key](value)
     })

@@ -140,6 +140,13 @@ describe('Guess Date', () => {
   describe('Mixed date and time', () => {
     test('6th December 2017 20:15', 'Wed, 06 Dec 2017 20:15:00 GMT')
   })
+
+  describe('Specific problematic dates', () => {
+    test('Sept 1', 'Wed, 01 Sep 2021 08:00:00 GMT', new Date(1630428420 * 1000)) // Tue Aug 31 2021 16:47:00 GMT
+    test('Sept 4', 'Sat, 04 Sep 2021 08:00:00 GMT', new Date(1630428420 * 1000)) // Tue Aug 31 2021 16:47:00 GMT
+    test('Sat', 'Sat, 04 Sep 2021 08:00:00 GMT', new Date(1630428420 * 1000)) // Tue Aug 31 2021 16:47:00 GMT
+    test('April 2nd', 'Sat, 02 Apr 2022 08:00:00 GMT', new Date(1648726740 * 1000)) // Thu Mar 31 2022 11:39:00 GMT
+  })
 })
 
 function logTestResults () {
