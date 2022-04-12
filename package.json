@@ -1,6 +1,6 @@
 {
   "name": "guessdate-en",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Guess an english date string, returns a javascript date object",
   "main": "guess.js",
   "scripts": {
@@ -19,6 +19,9 @@
     "Javascript"
   ],
   "author": "John Beech",
+  "contributors": [
+    { "name": "Jeroen Akkerman", "url": "https://github.com/Ionaru" }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/connected-web/guessdate-en/issues"
